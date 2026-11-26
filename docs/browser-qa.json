@@ -1,0 +1,29 @@
+{
+  "responses": [
+    [
+      200,
+      "http://127.0.0.1:8087/"
+    ],
+    [
+      200,
+      "http://127.0.0.1:8087/status"
+    ],
+    [
+      200,
+      "http://127.0.0.1:8087/api/data/browser-1795656474"
+    ],
+    [
+      200,
+      "http://127.0.0.1:8087/api/data/browser-1795656474"
+    ]
+  ],
+  "display": [
+    "200 \u00b7 MISS \u00b7 517.2 ms \u00b7 browser-worker-a",
+    "200 \u00b7 HIT \u00b7 13.8 ms \u00b7 browser-worker-b"
+  ],
+  "console_errors": [],
+  "redis_cli_ttl": [
+    60,
+    58
+  ]
+}

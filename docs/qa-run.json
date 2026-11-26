@@ -1,0 +1,588 @@
+{
+  "cache": {
+    "key": "qa-e31af6f8ec",
+    "miss_ms": 515.59,
+    "first_hit_ms": 1.44,
+    "median_hit_ms": 0.61,
+    "miss_replica": "worker-1",
+    "hit_replicas": [
+      "worker-1",
+      "worker-2"
+    ],
+    "ttl_seconds": [
+      60,
+      58
+    ]
+  },
+  "started": 1795656378.0011346,
+  "load": {
+    "200": 1488,
+    "MISS": 1488
+  },
+  "samples": [
+    {
+      "ready": 0,
+      "desired": 2,
+      "cpu": null,
+      "reason": "Waiting for ready replicas and a complete CPU sample",
+      "hold_seconds": 0,
+      "workers": [],
+      "time": "01:26:13"
+    },
+    {
+      "ready": 2,
+      "desired": 2,
+      "cpu": null,
+      "reason": "Waiting for ready replicas and a complete CPU sample",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2"
+      ],
+      "time": "01:26:15"
+    },
+    {
+      "ready": 2,
+      "desired": 2,
+      "cpu": 2.1,
+      "reason": "Within policy bounds",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2"
+      ],
+      "time": "01:26:17"
+    },
+    {
+      "ready": 2,
+      "desired": 2,
+      "cpu": 86.7,
+      "reason": "High CPU",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2"
+      ],
+      "time": "01:26:19"
+    },
+    {
+      "ready": 2,
+      "desired": 4,
+      "cpu": 175.4,
+      "reason": "Scale out after two high CPU samples",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2"
+      ],
+      "time": "01:26:21"
+    },
+    {
+      "ready": 4,
+      "desired": 4,
+      "cpu": null,
+      "reason": "Waiting for ready replicas and a complete CPU sample",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4"
+      ],
+      "time": "01:26:23"
+    },
+    {
+      "ready": 4,
+      "desired": 4,
+      "cpu": 70.8,
+      "reason": "High CPU",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4"
+      ],
+      "time": "01:26:25"
+    },
+    {
+      "ready": 4,
+      "desired": 6,
+      "cpu": 77.2,
+      "reason": "Scale out after two high CPU samples",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4"
+      ],
+      "time": "01:26:27"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": null,
+      "reason": "Waiting for ready replicas and a complete CPU sample",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:26:29"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 56.3,
+      "reason": "High CPU",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:26:31"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 56.5,
+      "reason": "High CPU",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:26:33"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 55.8,
+      "reason": "High CPU",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:26:35"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 51.6,
+      "reason": "High CPU",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:26:37"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 51.7,
+      "reason": "High CPU",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:26:39"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 47.5,
+      "reason": "Within policy bounds",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:26:41"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 56.9,
+      "reason": "High CPU",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:26:43"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 55.5,
+      "reason": "High CPU",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:26:45"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 57.3,
+      "reason": "High CPU",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:26:47"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 56.1,
+      "reason": "High CPU",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:26:49"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 27.9,
+      "reason": "Within policy bounds",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:26:51"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 0.1,
+      "reason": "Holding capacity during scale-down cooldown",
+      "hold_seconds": 0.0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:26:53"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 0.1,
+      "reason": "Holding capacity during scale-down cooldown",
+      "hold_seconds": 2.0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:26:55"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 0.1,
+      "reason": "Holding capacity during scale-down cooldown",
+      "hold_seconds": 4.0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:26:57"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 0.2,
+      "reason": "Holding capacity during scale-down cooldown",
+      "hold_seconds": 6.0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:26:59"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 0.1,
+      "reason": "Holding capacity during scale-down cooldown",
+      "hold_seconds": 8.0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:27:01"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 0.1,
+      "reason": "Holding capacity during scale-down cooldown",
+      "hold_seconds": 10.0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:27:03"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 0.2,
+      "reason": "Holding capacity during scale-down cooldown",
+      "hold_seconds": 12.0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:27:05"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 0.1,
+      "reason": "Holding capacity during scale-down cooldown",
+      "hold_seconds": 14.0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:27:07"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 0.1,
+      "reason": "Holding capacity during scale-down cooldown",
+      "hold_seconds": 16.0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:27:09"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 0.2,
+      "reason": "Holding capacity during scale-down cooldown",
+      "hold_seconds": 18.0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:27:11"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 0.2,
+      "reason": "Holding capacity during scale-down cooldown",
+      "hold_seconds": 20.0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:27:13"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 0.2,
+      "reason": "Holding capacity during scale-down cooldown",
+      "hold_seconds": 22.0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:27:15"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 0.2,
+      "reason": "Holding capacity during scale-down cooldown",
+      "hold_seconds": 24.1,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:27:17"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 0.2,
+      "reason": "Holding capacity during scale-down cooldown",
+      "hold_seconds": 26.1,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:27:19"
+    },
+    {
+      "ready": 6,
+      "desired": 6,
+      "cpu": 0.2,
+      "reason": "Holding capacity during scale-down cooldown",
+      "hold_seconds": 28.1,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:27:21"
+    },
+    {
+      "ready": 6,
+      "desired": 2,
+      "cpu": 0.2,
+      "reason": "Scale in after 30 continuous low-CPU seconds",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2",
+        "worker-3",
+        "worker-4",
+        "worker-5",
+        "worker-6"
+      ],
+      "time": "01:27:23"
+    },
+    {
+      "ready": 2,
+      "desired": 2,
+      "cpu": 0.3,
+      "reason": "Within policy bounds",
+      "hold_seconds": 0,
+      "workers": [
+        "worker-1",
+        "worker-2"
+      ],
+      "time": "01:27:25"
+    }
+  ],
+  "redis_version": "6.2.14",
+  "expired_after_run": true,
+  "health_http": 200,
+  "unexpected_worker_exits": 0,
+  "error_log_lines": []
+}

@@ -1,0 +1,104 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: report-redis}
+spec:
+  replicas: 1
+  selector: {matchLabels: {role: report-redis}}
+  template:
+    metadata: {labels: {role: report-redis}}
+    spec:
+      containers:
+        - name: redis
+          image: redis:7.4-alpine
+          args: ["redis-server","--save","","--appendonly","no","--maxmemory","64mb","--maxmemory-policy","allkeys-lru"]
+          ports: [{containerPort: 6379}]
+          resources:
+            requests: {cpu: 50m, memory: 32Mi}
+            limits: {cpu: 500m, memory: 128Mi}
+          readinessProbe: {exec: {command: ["redis-cli","ping"]}, periodSeconds: 3}
+---
+apiVersion: v1
+kind: Service
+metadata: {name: report-redis}
+spec:
+  selector: {role: report-redis}
+  ports: [{port: 6379, targetPort: 6379}]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: report-api}
+spec:
+  replicas: 2
+  selector: {matchLabels: {role: report-api}}
+  template:
+    metadata: {labels: {role: report-api}}
+    spec:
+      containers:
+        - name: api
+          image: week07-cache-lab:local
+          imagePullPolicy: Never
+          env: [{name: REDIS_URL, value: "redis://report-redis:6379/0"}]
+          ports: [{containerPort: 8000}]
+          resources:
+            requests: {cpu: 200m, memory: 32Mi}
+            limits: {cpu: 500m, memory: 128Mi}
+          readinessProbe: {httpGet: {path: /healthz, port: 8000}, periodSeconds: 3}
+---
+apiVersion: v1
+kind: Service
+metadata: {name: report-workers}
+spec:
+  clusterIP: None
+  selector: {role: report-api}
+  ports: [{port: 8000, targetPort: 8000}]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: report-gateway}
+spec:
+  replicas: 1
+  selector: {matchLabels: {role: report-gateway}}
+  template:
+    metadata: {labels: {role: report-gateway}}
+    spec:
+      containers:
+        - name: gateway
+          image: week07-cache-lab:local
+          imagePullPolicy: Never
+          command: ["python","-m","app.gateway"]
+          env:
+            - {name: WORKER_DNS, value: report-workers}
+            - {name: SCALING_MODE, value: hpa}
+            - {name: REDIS_URL, value: "redis://report-redis:6379/0"}
+          ports: [{containerPort: 8087}]
+          resources:
+            requests: {cpu: 100m, memory: 48Mi}
+            limits: {cpu: 500m, memory: 128Mi}
+          readinessProbe: {httpGet: {path: /healthz, port: 8087}, periodSeconds: 3}
+---
+apiVersion: v1
+kind: Service
+metadata: {name: report-gateway}
+spec:
+  selector: {role: report-gateway}
+  ports: [{port: 8087, targetPort: 8087}]
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata: {name: report-api}
+spec:
+  scaleTargetRef: {apiVersion: apps/v1, kind: Deployment, name: report-api}
+  minReplicas: 2
+  maxReplicas: 6
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target: {type: Utilization, averageUtilization: 50}
+  behavior:
+    scaleUp:
+      stabilizationWindowSeconds: 0
+      policies: [{type: Pods, value: 2, periodSeconds: 15}]
+    scaleDown:
+      stabilizationWindowSeconds: 30
+      policies: [{type: Pods, value: 4, periodSeconds: 15}]

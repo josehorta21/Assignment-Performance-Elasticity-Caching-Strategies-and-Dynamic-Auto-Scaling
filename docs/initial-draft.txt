@@ -1,0 +1,15 @@
+Initial architecture sketch for review (excerpt)
+-----------------------------------------------
+Client -> round-robin application pool -> external Redis
+
+cached = await redis.get(key)
+if cached is not None:
+    return respond(cached, cache_status="HIT")
+value = await build_report(report_id)
+await redis.set(key, value)
+return respond(value, cache_status="MISS")
+
+if average_cpu_percent > 50:
+    desired = min(6, replicas + 2)
+else:
+    desired = max(2, replicas - 2)
