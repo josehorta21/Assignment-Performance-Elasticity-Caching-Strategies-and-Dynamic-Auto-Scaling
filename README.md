@@ -6,7 +6,7 @@ A report lookup simulates a 500 ms database read and a small CPU-intensive repor
 
 ## Architecture and request flow
 
-[Open the one-page architecture diagram for the recording](docs/Architecture.pdf).
+(docs/Architecture.pdf).
 
 ```mermaid
 flowchart TD
